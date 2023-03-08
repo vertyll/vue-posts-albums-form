@@ -7,7 +7,7 @@
       v-model:inputsData="inputsData" 
     />
     <FormOutput 
-      v-if="isFormDataSend" 
+      v-if="isFormDataSend"
       :inputsData="innputsDataForOutputMsg" 
       :formInputs="formInputs" />
   </main>
@@ -21,9 +21,8 @@ export default {
     return {
       inputsData: {}, //Ustawianie wpisanych wartości do pól formularza
       innputsDataForOutputMsg: {},
-      invalid: false,
+      isValidPesel: false,
       isFormDataSend: false,
-      invalidInputs: ["Imię", "Nazwisko", "Email", "Opis", "PESEL"],
       formInfo: {
         formId: "peselForm",
         class: "form-container",
@@ -105,11 +104,7 @@ export default {
           name: "showInputsData",
           content: "wyślij",
           btnFunction: () => {
-            //lenght
-            if (Object.keys(this.inputsData.name && this.inputsData.surname && this.inputsData.email && this.inputsData.description && this.inputsData.pesel || {}).length === 0) {
-              this.invalid = true;
-              return;
-            } else {
+            if (this.isValidPesel == true) {
               this.isFormDataSend = true;
               this.innputsDataForOutputMsg = this.inputsData;
             }
@@ -120,7 +115,7 @@ export default {
   },
   components: {
     CreateForm,
-    FormOutput
+    FormOutput,
   },
   methods: {
     inputValidation(value) {
@@ -149,6 +144,7 @@ export default {
         checkSum = checkSum % 10;
         let checkData = 10 - checkSum;
         if (checkData == value[10]) {
+          this.isValidPesel = true;
           return true;
         } else {
           return "Numer PESEL jest niepoprawny";
