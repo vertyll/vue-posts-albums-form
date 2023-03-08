@@ -121,8 +121,9 @@ main {
     border: 1px solid var(--input);
     border: none;
     border-radius: var(--r5);
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
+    margin-top: var(--r4);
     box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
 }
 
@@ -322,17 +323,5 @@ main {
     }
     header {
         display: none;
-    }
-    .form-output{
-        width: 80%;
-    }
-    .form-item > textarea, select, input{
-        width: 80%;
-    }
-    .form-item > label{
-        padding: var(--r2);
-    }
-    .form-button > button {
-        margin-top: var(--r4);
     }
 }
