@@ -105,8 +105,15 @@ export default {
           content: "wyślij",
           btnFunction: () => {
             if (this.isValidPesel == true) {
+              if (Object.keys(this.inputsData.name && this.inputsData.surname && this.inputsData.email && this.inputsData.description && this.inputsData.pesel || {}).length === 0) {
+                return;
+            } else {
               this.isFormDataSend = true;
               this.innputsDataForOutputMsg = this.inputsData;
+              // clear if change value in form
+              this.inputsData = {};
+              this.isValidPesel = false;
+            }
             }
           },
         },
@@ -147,9 +154,11 @@ export default {
           this.isValidPesel = true;
           return true;
         } else {
+          this.isValidPesel = false;
           return "Numer PESEL jest niepoprawny";
         }
       } else {
+        this.isValidPesel = false;
         return "Numer PESEL musi składać się z 11 cyfr";
       }
     },
