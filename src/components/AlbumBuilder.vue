@@ -1,9 +1,9 @@
 <template>
-  <div class="album" :id="`album-${album.id}`">
+  <div class="album" :id="`album${album.id}`">
     <h1>Autor: {{ album.userId }}</h1>
-    <h2>Album nr: {{ album.id }}</h2>
-    <h3>Tytuł: {{ album.title }}</h3>
-    <div class="album-bottom">
+    <h2>Tytuł: {{ album.title }}</h2>
+    <h3>Album nr: {{ album.id }}</h3>
+    <div class="album-button">
       <RouterLink :to="`/albums/${album.id}/photos`">
         <button>Zdjęcia</button>
       </RouterLink>

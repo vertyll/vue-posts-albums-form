@@ -1,10 +1,10 @@
 <template>
-  <div id="form-output">
+  <div class="form-output">
     <p 
       v-for="input in Object.keys(inputsData)" 
       :key="input"
     >
-      {{ formInputs[input].label }} : {{ inputsData[input] }}
+      {{ formInputs[input].nameToOutput }}: {{ inputsData[input] }}
     </p>
   </div>
 </template>

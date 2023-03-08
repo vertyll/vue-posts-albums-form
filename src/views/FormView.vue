@@ -25,13 +25,14 @@ export default {
       isFormDataSend: false,
       invalidInputs: ["Imię", "Nazwisko", "Email", "Opis", "PESEL"],
       formInfo: {
-        divId: "formContainer",
         formId: "peselForm",
+        class: "form-container",
       },
       formInputs: {
         name: {
           name: "name",
           label: "Wprowadź imię:",
+          nameToOutput: "Imię",
           type: "FormInput",
           inputType: "text",
           validation: [this.inputValidation],
@@ -39,6 +40,7 @@ export default {
         surname: {
           name: "surname",
           label: "Wprowadź nazwisko:",
+          nameToOutput: "Nazwisko",
           type: "FormInput",
           inputType: "text",
           validation: [this.inputValidation],
@@ -46,6 +48,7 @@ export default {
         email: {
           name: "email",
           label: "Wprowadź email:",
+          nameToOutput: "Email",
           type: "FormInput",
           inputType: "email",
           validation: [this.inputValidation, this.emailValidation],
@@ -53,6 +56,7 @@ export default {
         description: {
           name: "description",
           label: "Opis",
+          nameToOutput: "Opis",
           type: "FormTextarea",
           attributes: { row: 4, column: 50 },
           validation: [this.inputValidation],
@@ -60,6 +64,7 @@ export default {
         pesel: {
           name: "pesel",
           label: "Wprowadź numer PESEL:",
+          nameToOutput: "PESEL",
           type: "FormInput",
           inputType: "text",
           maxLength: "11",
@@ -68,6 +73,7 @@ export default {
         dob: {
           name: "dob",
           label: "Data urodzenia:",
+          nameToOutput: "Data urodzenia",
           type: "FormInput",
           inputType: "date",
           disabled: "true",
@@ -76,6 +82,7 @@ export default {
         age: {
           name: "age",
           label: "Wiek:",
+          nameToOutput: "Wiek",
           type: "FormInput",
           inputType: "number",
           disabled: "true",
@@ -84,6 +91,7 @@ export default {
         sex: {
           name: "sex",
           label: "Płeć:",
+          nameToOutput: "Płeć",
           type: "FormSelect",
           selectOptions: ["Mężczyzna", "Kobieta"],
           textForOptions: ["Mężczyzna", "Kobieta"],

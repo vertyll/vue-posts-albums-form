@@ -24,6 +24,7 @@ export default {
       postsData: null,
       formInfo: {
         divId: "filterFormContainer",
+        class: "filter-form-container",
         formId: "filterForm",
       },
       formInputs: {

@@ -1,2 +1,333 @@
 @import './base.css';
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+#app {
+	display: flex;
+	min-height: 100vh;
+}
+
+header {
+    background-color: var(--nav);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.sidebar {
+    background-color: var(--nav);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--r4);
+    margin: var(--r2);
+    margin-bottom: var(--r4);
+}
+
+.link:hover {
+    color: var(--success);
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+}
+
+.form-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.form-item > label{
+    margin: var(--r2);
+}
+
+.form-container{
+	display: flex;
+	justify-content: center;
+}
+
+#peselForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button > button {
+    background-color: var(--nav);
+    border: none;
+    border-radius: var(--r5);
+    color: var(--white);
+    padding: var(--r4) var(--r5);
+    text-align: center;
+    margin: var(--r2);
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: var(--r4);
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.form-button > button:hover {opacity: 1}
+
+.form-item > textarea, select, input{
+	padding: 10px;
+    border: 1px solid var(--input);
+    border-radius: var(--r4);
+    width: 300px;
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.form-item > label{
+    padding: var(--r2);
+}
+
+.errorInput{
+	border: 1px solid red !important;
+	background-color: rgba(255,0,0,0.1);
+}
+
+.errorInputMessage{
+	font-size: var(--r4);
+	color: red;
+
+}
+
+.form-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--r2);
+    border: 1px solid var(--input);
+    border-radius: var(--r5);
+    width: 40%;
+    margin: 0 auto;
+}
+
+.posts-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--r2);
+}
+
+.albums-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--r2);
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--input);
+    border-radius: var(--r5);
+    margin: var(--r2);
+    margin-bottom: var(--r5);
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.filter-form-container{
+    margin: var(--r2);
+    padding-bottom: var(--r4);
+}
+
+#filterForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--input);
+    border-radius: var(--r5);
+    margin: var(--r2);
+    margin-bottom: var(--r5);
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.album > h1 {
+    background-color: var(--nav);
+    color: var(--white);
+    width: 100%;
+    border-top-right-radius: var(--r5);
+    border-top-left-radius: var(--r5);
+    text-align: center;
+    padding: var(--r2);
+}
+
+.album h2, h3 {
+    padding: var(--r3);
+}
+
+.post > h1 {
+    background-color: var(--nav);
+    color: var(--white);
+    width: 100%;
+    border-top-right-radius: var(--r5);
+    border-top-left-radius: var(--r5);
+    text-align: center;
+    padding: var(--r2);
+}
+
+.post h2, h3, p {
+    padding: var(--r3);
+}
+
+.post-button > button {
+    background-color: var(--nav);
+    border: none;
+    border-radius: var(--r5);
+    color: var(--white);
+    padding: var(--r4) var(--r5);
+    text-align: center;
+    margin: var(--r3);
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+#progress {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 70px;
+    width: 70px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  #progress-value {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: #001a2e;
+  }
+
+.album-button a > button {
+    background-color: var(--nav);
+    border: none;
+    border-radius: var(--r5);
+    color: var(--white);
+    padding: var(--r4) var(--r5);
+    text-align: center;
+    margin: var(--r3);
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;   
+}
+
+.comment-div {
+    border-top: var(--input) 1px solid;
+    margin-bottom: var(--r4);
+}
+
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.photos-container img {
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navigation-previous, .navigation-next {
+    background-color: var(--nav);
+    border: none;
+    border-radius: var(--r5);
+    color: var(--white);
+    padding: var(--r4) var(--r5);
+    text-align: center;
+    margin: var(--r3);
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+}
+
+.navigation-previous:hover, .navigation-next:hover {
+    opacity: 1;
+}
+
+.album-button a > button:hover {opacity: 1}
+
+.post-button > button:hover {opacity: 1}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    header {
+        display: none;
+    }
+    .form-output{
+        width: 80%;
+    }
+    .form-item > textarea, select, input{
+        width: 80%;
+    }
+    .form-item > label{
+        padding: var(--r2);
+    }
+    .form-button > button {
+        margin-top: var(--r4);
+    }
+}

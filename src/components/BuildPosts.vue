@@ -1,5 +1,5 @@
 <template>
-    <div class="post-container">
+    <div class="posts-container">
       <PostBuilder 
         v-for="post in postsData" 
         :key="post" 

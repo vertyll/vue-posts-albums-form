@@ -1,5 +1,5 @@
 <template>
-  <div class="form-item">
+  <div class="form-button">
     <button type="button" :name="input.name">
       {{ input.content }}
     </button>

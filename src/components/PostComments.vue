@@ -1,5 +1,5 @@
 <template>
-  <div class="comments-container" :id="`post${postId}-comments`">
+  <div class="comments-container" :id="`post${postId}comments`">
     <h2>Komentarze:</h2>
     <div 
       v-for="comment in comments" 

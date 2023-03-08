@@ -1,5 +1,5 @@
 <template>
-  <div :id="formInfo.divId">
+  <div :class="formInfo.class" :id="formInfo.formId">
     <form :id="formInfo.formId" :name="formInfo.formId">
       <BasicInput 
         v-for="input in formInputs" 

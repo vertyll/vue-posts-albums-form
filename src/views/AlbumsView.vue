@@ -23,6 +23,7 @@ export default {
       albumsData: null,
       formInfo: {
         divId: "filterFormContainer",
+        class: "filter-form-container",
         formId: "filterForm",
       },
       formInputs: {
