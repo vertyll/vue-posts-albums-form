@@ -91,6 +91,7 @@ main {
 .form-item > textarea, select, input{
 	padding: 10px;
     border: 1px solid var(--input);
+    border: none;
     border-radius: var(--r4);
     width: 300px;
     box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
@@ -118,9 +119,11 @@ main {
     align-items: center;
     padding: var(--r2);
     border: 1px solid var(--input);
+    border: none;
     border-radius: var(--r5);
     width: 40%;
     margin: 0 auto;
+    box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
 }
 
 .posts-container{
@@ -144,6 +147,7 @@ main {
     flex-direction: column;
     justify-content: center;
     border: 1px solid var(--input);
+    border: none;
     border-radius: var(--r5);
     margin: var(--r2);
     margin-bottom: var(--r5);
@@ -174,6 +178,7 @@ main {
     flex-direction: column;
     justify-content: center;
     border: 1px solid var(--input);
+    border: none;
     border-radius: var(--r5);
     margin: var(--r2);
     margin-bottom: var(--r5);

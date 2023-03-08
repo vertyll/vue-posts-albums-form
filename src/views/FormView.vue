@@ -106,7 +106,7 @@ export default {
           content: "wyślij",
           btnFunction: () => {
             //lenght
-            if (Object.keys(this.inputsData.name || {}).length === 0) {
+            if (Object.keys(this.inputsData.name && this.inputsData.surname && this.inputsData.email && this.inputsData.description && this.inputsData.pesel || {}).length === 0) {
               this.invalid = true;
               return;
             } else {
