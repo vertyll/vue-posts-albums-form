@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import FormView from '../views/FormView.vue'
 import PostsView from '../views/PostsView.vue'
 import AlbumsView from '../views/AlbumsView.vue'
+import PhotosView from '../views/PhotosView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 import { getAlbumsData } from "@/api.js";
 
@@ -32,7 +33,7 @@ const router = createRouter({
     {
       path: "/albums/:albumId/photos",
       name: "photos",
-      component: () => import("@/views/PhotosView.vue"),
+      component: PhotosView,
       props: (route) => ({
         ...route.params,
         albumId: parseInt(route.params.albumId),
