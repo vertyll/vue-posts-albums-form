@@ -153,6 +153,7 @@ main {
     margin: var(--r2);
     margin-bottom: var(--r5);
     box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+    width: 100%;
 }
 
 .filter-form-container{
@@ -162,7 +163,6 @@ main {
 
 #filterForm{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -172,6 +172,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: var(--r3);
 }
 
 .album {
