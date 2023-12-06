@@ -1,4 +1,4 @@
-# vue-posts-and-form
+# vue-posts-albums-form
 
 This template should help get you started developing with Vue 3 in Vite.
 
