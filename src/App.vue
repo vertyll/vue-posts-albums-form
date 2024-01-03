@@ -27,7 +27,7 @@ window.onload = scrollToTop;
 <template>
   <header>
     <div id="progress">
-      <span id="progress-value">&#8657;</span>
+      <span id="progress-value">&uarr;</span>
     </div>
     <div class="wrapper">
       <nav class="sidebar">
