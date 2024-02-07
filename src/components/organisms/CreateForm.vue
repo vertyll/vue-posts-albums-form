@@ -1,22 +1,23 @@
 <template>
   <div :class="formInfo.class" :id="formInfo.formId">
     <form :id="formInfo.formId" :name="formInfo.formId">
-      <BasicInput 
-        v-for="input in formInputs" 
-        :key="input" :is="input.type" 
-        :input="input" 
-        v-model="values[input.name]" 
+      <BasicInput
+        v-for="input in formInputs"
+        :key="input"
+        :is="input.type"
+        :input="input"
+        v-model="values[input.name]"
       />
-      <BasicButton 
-        v-for="btn in btns" 
-        :key="btn" 
-        :input="btn" 
-        @click="btn.btnFunction" 
+      <BasicButton
+        v-for="btn in btns"
+        :key="btn"
+        :input="btn"
+        @click="btn.btnFunction"
       />
     </form>
   </div>
 </template>
-  
+
 <script>
 import BasicInput from "../atoms/BasicInput.vue";
 import BasicSelect from "../atoms/BasicSelect.vue";

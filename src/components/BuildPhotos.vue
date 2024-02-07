@@ -9,7 +9,7 @@
     </div>
   </main>
 </template>
-  
+
 <script>
 export default {
   props: {

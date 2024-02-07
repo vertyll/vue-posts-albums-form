@@ -1,15 +1,16 @@
 <template>
   <main>
-    <CreateForm 
-      :formInputs="formInputs" 
-      :btns="btns" 
-      :formInfo="formInfo" 
-      v-model:inputsData="inputsData" 
+    <CreateForm
+      :formInputs="formInputs"
+      :btns="btns"
+      :formInfo="formInfo"
+      v-model:inputsData="inputsData"
     />
-    <FormOutput 
+    <FormOutput
       v-if="isFormDataSend"
-      :inputsData="innputsDataForOutputMsg" 
-      :formInputs="formInputs" />
+      :inputsData="innputsDataForOutputMsg"
+      :formInputs="formInputs"
+    />
   </main>
 </template>
 
@@ -105,15 +106,24 @@ export default {
           content: "wyślij",
           btnFunction: () => {
             if (this.isValidPesel == true) {
-              if (Object.keys(this.inputsData.name && this.inputsData.surname && this.inputsData.email && this.inputsData.description && this.inputsData.pesel || {}).length === 0) {
+              if (
+                Object.keys(
+                  (this.inputsData.name &&
+                    this.inputsData.surname &&
+                    this.inputsData.email &&
+                    this.inputsData.description &&
+                    this.inputsData.pesel) ||
+                    {}
+                ).length === 0
+              ) {
                 return;
-            } else {
-              this.isFormDataSend = true;
-              this.innputsDataForOutputMsg = this.inputsData;
-              // clear if change value in form
-              this.inputsData = {};
-              this.isValidPesel = false;
-            }
+              } else {
+                this.isFormDataSend = true;
+                this.innputsDataForOutputMsg = this.inputsData;
+                // clear if change value in form
+                this.inputsData = {};
+                this.isValidPesel = false;
+              }
             }
           },
         },
@@ -181,9 +191,8 @@ export default {
       dobDay = pesel.slice(4, 6);
       this.inputsData["dob"] = `${dobYear}-${dobMonth}-${dobDay}`;
       let calculatedAge =
-        new Date(
-          new Date() - new Date(this.inputsData["dob"])
-        ).getFullYear() - 1970;
+        new Date(new Date() - new Date(this.inputsData["dob"])).getFullYear() -
+        1970;
       this.inputsData["age"] = calculatedAge;
       if (value[9] % 2 === 0) {
         this.inputsData["sex"] = "Kobieta";

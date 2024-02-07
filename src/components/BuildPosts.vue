@@ -1,23 +1,19 @@
 <template>
-    <div class="posts-container">
-      <PostBuilder 
-        v-for="post in postsData" 
-        :key="post" 
-        :post="post" 
-      />
-    </div>
+  <div class="posts-container">
+    <PostBuilder v-for="post in postsData" :key="post" :post="post" />
+  </div>
 </template>
-  
+
 <script>
-  import PostBuilder from "./PostBuilder.vue";
-  export default {
-    props: {
-      postsData: {
-        type: Object,
-        required: true,
-        default: Object,
-      }
+import PostBuilder from "./PostBuilder.vue";
+export default {
+  props: {
+    postsData: {
+      type: Object,
+      required: true,
+      default: Object,
     },
-    components: { PostBuilder }
-  }
+  },
+  components: { PostBuilder },
+};
 </script>

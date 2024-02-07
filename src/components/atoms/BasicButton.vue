@@ -5,7 +5,7 @@
     </button>
   </div>
 </template>
-  
+
 <script>
 export default {
   props: {
@@ -14,5 +14,5 @@ export default {
       required: true,
     },
   },
-}
+};
 </script>

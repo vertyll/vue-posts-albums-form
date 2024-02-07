@@ -1,17 +1,16 @@
 <template>
   <main>
-    <CreateForm 
-      :formInputs="formInputs" 
-      :btns="btns" 
-      :formInfo="formInfo" 
+    <CreateForm
+      :formInputs="formInputs"
+      :btns="btns"
+      :formInfo="formInfo"
       v-model:inputsData="inputsData"
     />
-    <BuildAlbums 
-      :albumsData="albumsData" 
-      v-if="albumsData" 
-    />
+    <div class="spinner" v-if="isLoading"></div>
+    <BuildAlbums :albumsData="albumsData" v-if="albumsData" />
   </main>
 </template>
+
 <script>
 import { getAlbumsData } from "@/api.js";
 import CreateForm from "@/components/organisms/CreateForm.vue";
@@ -19,6 +18,7 @@ import BuildAlbums from "@/components/BuildAlbums.vue";
 export default {
   data() {
     return {
+      isLoading: false,
       inputsData: {},
       albumsData: null,
       formInfo: {
@@ -50,9 +50,11 @@ export default {
           name: "filter",
           content: "Filtruj",
           btnFunction: async () => {
+            this.isLoading = true;
             this.albumsData = null;
             this.albumsData = await getAlbumsData();
             this.useFilter();
+            this.isLoading = false;
           },
         },
         clean: {
@@ -60,26 +62,28 @@ export default {
           name: "clean",
           content: "Wyczyść",
           btnFunction: async () => {
+            this.isLoading = true;
             document.forms["filterForm"].reset();
             this.inputsData = {};
             this.albumsData = null;
             this.albumsData = await getAlbumsData();
+            this.isLoading = false;
           },
         },
       },
-    }
+    };
   },
   components: {
     CreateForm,
     BuildAlbums,
   },
   async created() {
+    this.isLoading = true;
     this.albumsData = await getAlbumsData();
+    this.isLoading = false;
     if (localStorage.getItem("albumsInputsData")) {
       try {
-        this.inputsData = JSON.parse(
-          localStorage.getItem("albumsInputsData")
-        );
+        this.inputsData = JSON.parse(localStorage.getItem("albumsInputsData"));
       } catch (e) {
         localStorage.removeItem("albumsInputsData");
       }

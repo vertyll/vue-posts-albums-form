@@ -1,18 +1,16 @@
 <template>
   <main>
-    <CreateForm 
-      :formInputs="formInputs" 
-      :btns="btns" 
-      :formInfo="formInfo" 
-      v-model:inputsData="inputsData" 
+    <CreateForm
+      :formInputs="formInputs"
+      :btns="btns"
+      :formInfo="formInfo"
+      v-model:inputsData="inputsData"
     />
-    <BuildPost 
-      :postsData="postsData" 
-      v-if="postsData" 
-    />
+    <div class="spinner" v-if="isLoading"></div>
+    <BuildPost :postsData="postsData" v-if="postsData" />
   </main>
 </template>
-  
+
 <script>
 import { getPostsData } from "@/api.js";
 import CreateForm from "@/components/organisms/CreateForm.vue";
@@ -20,6 +18,7 @@ import BuildPost from "@/components/BuildPosts.vue";
 export default {
   data() {
     return {
+      isLoading: false,
       inputsData: {},
       postsData: null,
       formInfo: {
@@ -59,9 +58,11 @@ export default {
           name: "filter",
           content: "Filtruj",
           btnFunction: async () => {
+            this.isLoading = true;
             this.postsData = null;
             this.postsData = await getPostsData();
             this.useFilter();
+            this.isLoading = false;
           },
         },
         clean: {
@@ -69,18 +70,20 @@ export default {
           name: "clean",
           content: "Wyczyść",
           btnFunction: async () => {
+            this.isLoading = true;
             document.forms["filterForm"].reset();
             this.inputsData = {};
             this.postsData = null;
             this.postsData = await getPostsData();
+            this.isLoading = false;
           },
         },
       },
-    }
+    };
   },
   components: {
     CreateForm,
-    BuildPost
+    BuildPost,
   },
   async created() {
     this.postsData = await getPostsData();
@@ -113,11 +116,11 @@ export default {
           } else if (type == "number") {
             this.postsData = this.postsData.filter((e) => {
               return e[key] == this.inputsData[input];
-            })
+            });
           }
         }
       }
     },
   },
-}
+};
 </script>

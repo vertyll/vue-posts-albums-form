@@ -10,15 +10,15 @@
     </div>
   </div>
 </template>
-  
+
 <script>
-  export default {
-    props: {
-      album: {
-        type: Object,
-        required: true,
-        default: Object,
-      },
+export default {
+  props: {
+    album: {
+      type: Object,
+      required: true,
+      default: Object,
     },
-  }
+  },
+};
 </script>
