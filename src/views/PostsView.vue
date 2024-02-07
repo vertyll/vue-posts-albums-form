@@ -86,7 +86,9 @@ export default {
     BuildPost,
   },
   async created() {
+    this.isLoading = true;
     this.postsData = await getPostsData();
+    this.isLoading = false;
     if (localStorage.getItem("postsInputsData")) {
       try {
         this.inputsData = JSON.parse(localStorage.getItem("postsInputsData"));
