@@ -8,38 +8,32 @@
 }
 
 #app {
-  display: flex;
   min-height: 100vh;
 }
 
-header {
+.navbar {
   background-color: var(--nav);
-  padding: 1rem;
+  padding: 15px;
+  color: var(--white);
   display: flex;
-  justify-content: space-between;
-  box-shadow: 1px 0px 2px 0px rgba(66, 68, 90, 1);
-}
-
-.sidebar {
-  background-color: var(--nav);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  width: 200px;
 }
 
 .link {
   color: var(--white);
   text-decoration: none;
   font-size: var(--r4);
-  margin: var(--r2);
-  margin-bottom: var(--r4);
+  padding: 10px 15px;
+  transition: color 0.3s;
 }
 
 .link:hover {
   color: var(--success);
+}
+
+.active {
+  color: var(--success);
+  font-weight: bold;
 }
 
 main {
@@ -351,7 +345,7 @@ p {
   .container {
     flex-direction: column;
   }
-  header {
-    display: none;
+  .navbar {
+    flex-direction: column; /* Stacks the links vertically on smaller screens */
   }
 }

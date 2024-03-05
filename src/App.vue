@@ -24,50 +24,41 @@ window.onload = scrollToTop;
 </script>
 
 <template>
-  <header>
-    <div id="progress">
-      <span id="progress-value">&uarr;</span>
-    </div>
-    <div class="wrapper">
-      <nav class="sidebar">
-        <RouterLink
-          class="link"
-          to="/"
-          exact
-          :class="{ active: $route.path === '/' }"
-          >Strona główna</RouterLink
-        >
-        <RouterLink
-          class="link"
-          to="/form"
-          exact
-          :class="{ active: $route.path === '/form' }"
-          >Formularz</RouterLink
-        >
-        <RouterLink
-          class="link"
-          to="/posts"
-          exact
-          :class="{ active: $route.path === '/posts' }"
-          >Posty</RouterLink
-        >
-        <RouterLink
-          class="link"
-          to="/albums"
-          exact
-          :class="{ active: $route.path === '/albums' }"
-          >Albumy</RouterLink
-        >
-      </nav>
-    </div>
-  </header>
+  <div id="progress">
+    <span id="progress-value">&uarr;</span>
+  </div>
+  <div>
+    <nav class="navbar">
+      <RouterLink
+        class="link"
+        to="/"
+        exact
+        :class="{ active: $route.path === '/' }"
+        >Strona główna</RouterLink
+      >
+      <RouterLink
+        class="link"
+        to="/form"
+        exact
+        :class="{ active: $route.path === '/form' }"
+        >Formularz</RouterLink
+      >
+      <RouterLink
+        class="link"
+        to="/posts"
+        exact
+        :class="{ active: $route.path === '/posts' }"
+        >Posty</RouterLink
+      >
+      <RouterLink
+        class="link"
+        to="/albums"
+        exact
+        :class="{ active: $route.path === '/albums' }"
+        >Albumy</RouterLink
+      >
+    </nav>
+  </div>
 
   <RouterView />
 </template>
-
-<style scoped>
-.active {
-  font-weight: bold;
-  color: var(--success);
-}
-</style>

@@ -103,7 +103,7 @@ export default {
         showInputsData: {
           type: "FormBtn",
           name: "showInputsData",
-          content: "wyślij",
+          content: "Wyślij",
           btnFunction: () => {
             if (this.isValidPesel == true) {
               if (
