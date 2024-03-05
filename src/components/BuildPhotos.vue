@@ -1,11 +1,11 @@
 <template>
   <main>
     <div class="photos-container">
+      <img :src="showPhoto.url" :alt="showPhoto.alt" />
       <div class="navigation">
         <div class="navigation-previous" @click="previous">PREV</div>
         <div class="navigation-next" @click="next">NEXT</div>
       </div>
-      <img :src="showPhoto.url" :alt="showPhoto.alt" />
     </div>
   </main>
 </template>
