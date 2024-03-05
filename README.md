@@ -22,9 +22,9 @@ Link: https://jsonplaceholder.typicode.com/
 
 ## Zdjęcia poglądowe
 
-![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-02-07%20100029.png)
-![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-02-07%20100115.png)
-![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-02-07%20100118.png)
+![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-03-05%20221346.png)
+![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-03-05%20221431.png)
+![zdjęcie poglądowe](https://raw.githubusercontent.com/vertyll/vue-posts-albums-form/main/screenshots/Zrzut%20ekranu%202024-03-05%20221436.png)
 
 ## Instrukcja instalacji projektu
 
