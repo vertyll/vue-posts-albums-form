@@ -340,7 +340,7 @@ p {
     flex-direction: column;
   }
   .navbar {
-    flex-direction: column; /* Stacks the links vertically on smaller screens */
+    flex-direction: column;
   }
 }
 
