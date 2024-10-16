@@ -2,30 +2,26 @@
 import { RouterLink, RouterView } from "vue-router";
 
 const scrollToTop = () => {
+  document.documentElement.scrollTop = 0;
+};
+
+window.onscroll = () => {
   let scrollProgress = document.getElementById("progress");
   let pos = document.documentElement.scrollTop;
-  let calcHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrollValue = Math.round((pos * 100) / calcHeight);
   if (pos > 100) {
-    scrollProgress.style.display = "grid";
+    scrollProgress.style.display = "block";
   } else {
     scrollProgress.style.display = "none";
   }
-  scrollProgress.addEventListener("click", () => {
-    document.documentElement.scrollTop = 0;
-  });
-  scrollProgress.style.background = `conic-gradient(#3bba9c ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 };
-
-window.onscroll = scrollToTop;
-window.onload = scrollToTop;
 </script>
 
 <template>
-  <div id="progress">
-    <span id="progress-value">&uarr;</span>
+  <div id="progress" @click="scrollToTop" class="scroll-to-top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 9L12 2L19 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
   <div>
     <nav class="navbar">
