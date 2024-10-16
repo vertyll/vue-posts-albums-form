@@ -271,6 +271,8 @@ p {
 
 .photos-container img {
   box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  max-width: 100%;
+  height: auto;
 }
 
 .navigation {
@@ -459,5 +461,13 @@ p {
     width: 90%;
     padding: var(--r1);
     margin-top: var(--r2);
+  }
+
+  .photos-container {
+    padding: 10px;
+  }
+
+  .photos-container img {
+    width: 100%;
   }
 }
