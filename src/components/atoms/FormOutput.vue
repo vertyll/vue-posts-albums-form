@@ -1,7 +1,7 @@
 <template>
   <div class="form-output">
     <p v-for="input in Object.keys(inputsData)" :key="input">
-      {{ formInputs[input].nameToOutput }}: {{ inputsData[input] }}
+      <strong>{{ formInputs[input].nameToOutput }}:</strong> {{ inputsData[input] }}
     </p>
   </div>
 </template>

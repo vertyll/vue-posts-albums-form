@@ -124,6 +124,14 @@ input {
   box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
 }
 
+@media (max-width: 600px) {
+  .form-output {
+    width: 90%;
+    padding: var(--r1);
+    margin-top: var(--r2);
+  }
+}
+
 .posts-container {
   display: flex;
   flex-direction: column;
