@@ -11,6 +11,17 @@
   min-height: 100vh;
 }
 
+.container-home-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: var(--r5);
+  padding: 12px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
 .link {
   color: var(--white);
   text-decoration: none;
@@ -69,7 +80,7 @@ main {
   text-decoration: none;
   cursor: pointer;
   margin-top: var(--r4);
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
 }
 
 .form-button > button:hover {
@@ -84,7 +95,7 @@ input {
   border: none;
   border-radius: var(--r4);
   width: 300px;
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
 }
 
 .form-item > label {
@@ -92,13 +103,13 @@ input {
 }
 
 .errorInput {
-  border: 1px solid red !important;
-  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid var(--error-input) !important;
+  background-color: var(--error-input-background);
 }
 
 .errorInputMessage {
   font-size: var(--r4);
-  color: red;
+  color: var(--error-input);
 }
 
 .form-output {
@@ -113,7 +124,7 @@ input {
   width: 50%;
   margin: 0 auto;
   margin-top: var(--r4);
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
 }
 
 .posts-container {
@@ -141,7 +152,7 @@ input {
   border-radius: var(--r5);
   margin: var(--r2);
   margin-bottom: var(--r5);
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
   width: 100%;
 }
 
@@ -174,7 +185,7 @@ input {
   border-radius: var(--r5);
   margin: var(--r2);
   margin-bottom: var(--r5);
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
 }
 
 .album > h1 {
@@ -228,7 +239,7 @@ p {
   bottom: 20px;
   right: 20px;
   background-color: var(--nav);
-  color: white;
+  color: var(--white);
   border-radius: 15px;
   padding: 12px;
   display: none;
@@ -270,7 +281,7 @@ p {
 }
 
 .photos-container img {
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
   max-width: 100%;
   height: auto;
 }
@@ -297,7 +308,7 @@ p {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  box-shadow: var(--box-shadow);
 }
 
 .navigation-previous:hover,
@@ -373,7 +384,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--overlay-background);
   z-index: 998;
 }
 
@@ -391,7 +402,6 @@ p {
   padding: 12px;
   display: none;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
 }
 

@@ -6,6 +6,9 @@
   --nav: #333333;
   --white: #ffffff;
   --black: #000000;
+  --error-input: red;
+  --error-input-background: rgba(255, 0, 0, 0.1);
+  --overlay-background: rgba(0, 0, 0, 0.5);
   --input: #d6d6d6;
   --r1: 0.1rem;
   --r2: 0.2rem;
@@ -14,4 +17,5 @@
   --r5: 2rem;
   --font: "Open Sans", sans-serif;
   --fontSize: 1rem;
+  --box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
 }
