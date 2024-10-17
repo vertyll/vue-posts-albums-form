@@ -14,7 +14,7 @@
 <script>
 import { getAlbumsData } from "@/api.js";
 import CreateForm from "@/components/organisms/CreateForm.vue";
-import BuildAlbums from "@/components/BuildAlbums.vue";
+import BuildAlbums from "@/components/organisms/BuildAlbums.vue";
 export default {
   data() {
     return {

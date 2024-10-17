@@ -14,7 +14,7 @@
 <script>
 import { getPostsData } from "@/api.js";
 import CreateForm from "@/components/organisms/CreateForm.vue";
-import BuildPost from "@/components/BuildPosts.vue";
+import BuildPost from "@/components/organisms/BuildPosts.vue";
 export default {
   data() {
     return {

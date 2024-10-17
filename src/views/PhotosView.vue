@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BuildPhotos from "@/components/BuildPhotos.vue";
+import BuildPhotos from "@/components/organisms/BuildPhotos.vue";
 import { getPhotosFromAlbums } from "@/api.js";
 export default {
   data() {
