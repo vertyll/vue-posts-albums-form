@@ -1,13 +1,9 @@
 <template>
   <main>
-    <CreateForm
-      :formInputs="formInputs"
-      :btns="btns"
-      :formInfo="formInfo"
-      v-model:inputsData="inputsData"
-    />
+    <CreateForm :formInputs="formInputs" :btns="btns" :formInfo="formInfo" v-model:inputsData="inputsData" />
     <div class="spinner" v-if="isLoading"></div>
-    <BuildPost :postsData="postsData" v-if="postsData" />
+    <div v-if="noResults">Nie znaleziono wyników</div>
+    <BuildPost :postsData="postsData" v-if="postsData && !noResults" />
   </main>
 </template>
 
@@ -15,12 +11,14 @@
 import { getPostsData } from "@/api.js";
 import CreateForm from "@/components/organisms/CreateForm.vue";
 import BuildPost from "@/components/organisms/BuildPosts.vue";
+
 export default {
   data() {
     return {
       isLoading: false,
       inputsData: {},
       postsData: null,
+      noResults: false,
       formInfo: {
         divId: "filterFormContainer",
         class: "filter-form-container",
@@ -75,6 +73,7 @@ export default {
             this.inputsData = {};
             this.postsData = null;
             this.postsData = await getPostsData();
+            this.noResults = false;
             this.isLoading = false;
           },
         },
@@ -107,6 +106,7 @@ export default {
       localStorage.setItem("postsInputsData", parsed);
     },
     useFilter() {
+      this.noResults = false;
       for (let input in this.inputsData) {
         let type = this.formInputs[input].inputType;
         let key = this.formInputs[input].filterKey;
@@ -121,6 +121,9 @@ export default {
             });
           }
         }
+      }
+      if (this.postsData.length === 0) {
+        this.noResults = true;
       }
     },
   },

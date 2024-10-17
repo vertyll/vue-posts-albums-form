@@ -7,6 +7,7 @@
       v-model:inputsData="inputsData"
     />
     <div class="spinner" v-if="isLoading"></div>
+    <div v-if="noResults">Nie znaleziono wyników</div>
     <BuildAlbums :albumsData="albumsData" v-if="albumsData" />
   </main>
 </template>
@@ -21,6 +22,7 @@ export default {
       isLoading: false,
       inputsData: {},
       albumsData: null,
+      noResults: false,
       formInfo: {
         divId: "filterFormContainer",
         class: "filter-form-container",
@@ -67,6 +69,7 @@ export default {
             this.inputsData = {};
             this.albumsData = null;
             this.albumsData = await getAlbumsData();
+            this.noResults = false;
             this.isLoading = false;
           },
         },
@@ -99,6 +102,7 @@ export default {
       localStorage.setItem("albumsInputsData", parsed);
     },
     useFilter() {
+      this.noResults = false;
       for (let input in this.inputsData) {
         let type = this.formInputs[input].inputType;
         let key = this.formInputs[input].filterKey;
@@ -113,6 +117,9 @@ export default {
             });
           }
         }
+      }
+      if (this.albumsData.length === 0) {
+        this.noResults = true;
       }
     },
   },
